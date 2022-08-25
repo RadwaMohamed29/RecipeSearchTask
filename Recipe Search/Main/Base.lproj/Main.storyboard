@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cU5-gV-vxU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recipes Search View Controller-->
+        <scene sceneID="gud-gh-uM8">
+            <objects>
+                <viewController id="0Yy-ut-Muw" customClass="RecipesSearchViewController" customModule="Recipe_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eJp-vC-U81">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="RwC-r0-9Vh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Nds-Go-q4r"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dyD-EF-TD8">
+                                <rect key="frame" x="0.0" y="208" width="414" height="688"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGJ-Mf-KnJ">
+                                <rect key="frame" x="0.0" y="148" width="414" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jYZ-ur-2FF"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="La5-of-GbE"/>
+                                    <barButtonItem title="All" id="G1l-0I-cSK"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SUx-pk-Dy3"/>
+                                    <barButtonItem title="Low Suger" id="iBq-TY-K4v"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vKF-2K-EJO"/>
+                                    <barButtonItem title="Keto" id="gft-D7-YXU"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kt6-u3-9p1"/>
+                                    <barButtonItem title="Vegan" id="8eQ-1C-KKj"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="j3L-R0-dhe"/>
+                                </items>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rt8-rM-fRn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dyD-EF-TD8" firstAttribute="top" secondItem="lGJ-Mf-KnJ" secondAttribute="bottom" constant="10" id="284-SB-Z50"/>
+                            <constraint firstItem="RwC-r0-9Vh" firstAttribute="width" secondItem="eJp-vC-U81" secondAttribute="width" id="AUI-Md-ScF"/>
+                            <constraint firstItem="lGJ-Mf-KnJ" firstAttribute="top" secondItem="RwC-r0-9Vh" secondAttribute="bottom" id="FER-jh-gS9"/>
+                            <constraint firstItem="RwC-r0-9Vh" firstAttribute="top" secondItem="Rt8-rM-fRn" secondAttribute="top" id="Gyn-Bb-vyb"/>
+                            <constraint firstItem="lGJ-Mf-KnJ" firstAttribute="leading" secondItem="Rt8-rM-fRn" secondAttribute="leading" id="TgJ-UI-DnL"/>
+                            <constraint firstItem="dyD-EF-TD8" firstAttribute="leading" secondItem="Rt8-rM-fRn" secondAttribute="leading" id="V2r-Si-Vyo"/>
+                            <constraint firstItem="lGJ-Mf-KnJ" firstAttribute="width" secondItem="eJp-vC-U81" secondAttribute="width" id="Vce-hA-QAC"/>
+                            <constraint firstAttribute="bottom" secondItem="dyD-EF-TD8" secondAttribute="bottom" id="b4h-VG-aKo"/>
+                            <constraint firstItem="dyD-EF-TD8" firstAttribute="height" secondItem="eJp-vC-U81" secondAttribute="height" multiplier="0.767857" id="bed-ti-g0K"/>
+                            <constraint firstItem="RwC-r0-9Vh" firstAttribute="leading" secondItem="Rt8-rM-fRn" secondAttribute="leading" id="fgK-yD-z2K"/>
+                            <constraint firstItem="dyD-EF-TD8" firstAttribute="trailing" secondItem="Rt8-rM-fRn" secondAttribute="trailing" id="k4m-tj-fz6"/>
+                            <constraint firstItem="RwC-r0-9Vh" firstAttribute="trailing" secondItem="Rt8-rM-fRn" secondAttribute="trailing" id="nU4-XK-LTm"/>
+                            <constraint firstItem="lGJ-Mf-KnJ" firstAttribute="height" secondItem="eJp-vC-U81" secondAttribute="height" multiplier="0.0558036" id="nfL-vJ-kBz"/>
+                            <constraint firstItem="lGJ-Mf-KnJ" firstAttribute="trailing" secondItem="Rt8-rM-fRn" secondAttribute="trailing" id="oSv-18-1lx"/>
+                            <constraint firstItem="RwC-r0-9Vh" firstAttribute="height" secondItem="eJp-vC-U81" secondAttribute="height" multiplier="0.0669643" id="s4v-Cr-9YD"/>
+                            <constraint firstItem="dyD-EF-TD8" firstAttribute="width" secondItem="eJp-vC-U81" secondAttribute="width" id="t9Y-rj-fdI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BqI-Ut-jVN"/>
+                    <connections>
+                        <outlet property="recipeTableView" destination="dyD-EF-TD8" id="PSC-xq-wY4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xix-Hc-wVX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584.057971014493" y="81.696428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="opX-Mv-ssE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cU5-gV-vxU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qCc-pE-g6Y">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Yy-ut-Muw" kind="relationship" relationship="rootViewController" id="cGH-d9-XG2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fLf-9N-Bgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673.91304347826087" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
