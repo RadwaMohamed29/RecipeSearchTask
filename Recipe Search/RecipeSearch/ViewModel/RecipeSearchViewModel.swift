@@ -6,12 +6,25 @@
 //
 
 import Foundation
+import UIKit
 protocol RecipesViewModelType{
-    func callFuncToGetAllRecipes(completion: @escaping(Bool)-> Void)
+    func callFuncToGetAllRecipes(searchText:String, completion: @escaping(Bool)-> Void)
     var getRecipes: ((RecipesViewModelType)-> Void)? {get set}
     var recipesData: Recipe? {get set}
+    func openWebsite(url: String)
 }
 class RecipeSearchViewModel: RecipesViewModelType{
+    
+    func openWebsite(url: String) {
+        let application = UIApplication.shared
+        if application.canOpenURL(URL(string: url)!){
+            application.open(URL(string: url)!)
+        }else{
+            application.open(URL(string: "https://\(url)")!)
+
+        }
+    }
+    
     var network = ApiClient()
     var getRecipes: ((RecipesViewModelType) -> Void)?
     
@@ -20,9 +33,9 @@ class RecipeSearchViewModel: RecipesViewModelType{
             getRecipes?(self)
         }
     }
-    func callFuncToGetAllRecipes(completion: @escaping (Bool) -> Void) {
+    func callFuncToGetAllRecipes(searchText:String, completion: @escaping (Bool) -> Void) {
         completion(false)
-        network.getAllRecipes(recipeText: "chicken") { [weak self]
+        network.getAllRecipes(recipeText: searchText) { [weak self]
             result in
             switch result{
             case .success(let recipes):

@@ -17,58 +17,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="367" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZq-GD-eae">
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JZq-GD-eae">
                         <rect key="frame" x="0.0" y="0.0" width="367" height="150"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KYd-Mq-dAj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYd-Mq-dAj">
                                 <rect key="frame" x="8" y="8" width="120" height="134"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="uNX-zC-TNm"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlz-lU-dDS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlz-lU-dDS">
                                 <rect key="frame" x="143" y="16" width="216" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fer-bN-7I7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fer-bN-7I7">
                                 <rect key="frame" x="143" y="45" width="216" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Health Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKa-io-m48">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="Health Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKa-io-m48">
                                 <rect key="frame" x="143" y="74" width="216" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jlz-lU-dDS" secondAttribute="trailing" constant="8" id="0jE-Ju-u0M"/>
-                            <constraint firstItem="bKa-io-m48" firstAttribute="leading" secondItem="KYd-Mq-dAj" secondAttribute="trailing" constant="15" id="7gR-yQ-zjz"/>
-                            <constraint firstItem="Fer-bN-7I7" firstAttribute="top" secondItem="jlz-lU-dDS" secondAttribute="bottom" constant="8" id="Btm-gb-3wp"/>
-                            <constraint firstAttribute="trailing" secondItem="bKa-io-m48" secondAttribute="trailing" constant="8" id="FWi-m6-OI5"/>
-                            <constraint firstAttribute="bottom" secondItem="bKa-io-m48" secondAttribute="bottom" constant="8" id="I6h-hN-reQ"/>
-                            <constraint firstItem="KYd-Mq-dAj" firstAttribute="leading" secondItem="JZq-GD-eae" secondAttribute="leading" constant="8" id="ITc-CD-Q4S"/>
-                            <constraint firstItem="KYd-Mq-dAj" firstAttribute="top" secondItem="JZq-GD-eae" secondAttribute="top" constant="8" id="NC1-aD-Zl9"/>
-                            <constraint firstItem="jlz-lU-dDS" firstAttribute="leading" secondItem="KYd-Mq-dAj" secondAttribute="trailing" constant="15" id="UJh-o9-ZjO"/>
-                            <constraint firstItem="jlz-lU-dDS" firstAttribute="top" secondItem="JZq-GD-eae" secondAttribute="top" constant="16" id="X0m-gC-pEP"/>
-                            <constraint firstItem="Fer-bN-7I7" firstAttribute="leading" secondItem="KYd-Mq-dAj" secondAttribute="trailing" constant="15" id="swY-8b-VtQ"/>
-                            <constraint firstAttribute="trailing" secondItem="Fer-bN-7I7" secondAttribute="trailing" constant="8" id="t7F-KI-yl0"/>
-                            <constraint firstItem="bKa-io-m48" firstAttribute="top" secondItem="Fer-bN-7I7" secondAttribute="bottom" constant="8" id="tMl-KS-rAC"/>
-                            <constraint firstAttribute="bottom" secondItem="KYd-Mq-dAj" secondAttribute="bottom" constant="8" id="uz8-1Z-1bE"/>
-                        </constraints>
                     </view>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="JZq-GD-eae" secondAttribute="trailing" id="Ked-X7-GNj"/>
-                    <constraint firstItem="JZq-GD-eae" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="OBT-Ai-mHc"/>
-                    <constraint firstItem="JZq-GD-eae" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ry6-l4-Yww"/>
-                    <constraint firstAttribute="bottom" secondItem="JZq-GD-eae" secondAttribute="bottom" id="ncf-iW-jAh"/>
-                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
