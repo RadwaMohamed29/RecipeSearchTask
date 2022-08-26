@@ -59,8 +59,8 @@ class RecipesSearchViewController: UIViewController, UITableViewDataSource, UITa
             return String(double)
         }.joined()
         cell.recipeHealthLbl.text = arr
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
+        cell.view.layer.borderColor = UIColor.black.cgColor
+        cell.view.layer.borderWidth = 1
 
 
         return cell

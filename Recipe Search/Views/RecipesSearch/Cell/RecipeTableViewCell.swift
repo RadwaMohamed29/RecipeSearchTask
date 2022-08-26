@@ -9,6 +9,7 @@ import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var view: UIView!
     @IBOutlet weak var recipeSourceLbl: UILabel!
     @IBOutlet weak var recipeTitleLbl: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
