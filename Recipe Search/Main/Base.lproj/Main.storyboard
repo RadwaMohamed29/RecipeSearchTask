@@ -42,7 +42,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SUx-pk-Dy3"/>
-                                    <barButtonItem title="Low Suger" id="iBq-TY-K4v">
+                                    <barButtonItem title="Low Sugar" id="iBq-TY-K4v">
                                         <connections>
                                             <action selector="lowSugerBtn:" destination="0Yy-ut-Muw" id="4WW-BR-d0r"/>
                                         </connections>

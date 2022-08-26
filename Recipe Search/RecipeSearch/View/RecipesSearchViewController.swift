@@ -99,10 +99,10 @@ class RecipesSearchViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     @IBAction func lowSugerBtn(_ sender: Any) {
-       getFilteredData(health: "low-suger")
+       getFilteredData(health: "low-sugar")
     }
     @IBAction func ketoBtn(_ sender: Any) {
-        getFilteredData(health: "keto")
+        getFilteredData(health: "keto-friendly")
     }
     @IBAction func veganBtn(_ sender: Any) {
        getFilteredData(health: "vegan")

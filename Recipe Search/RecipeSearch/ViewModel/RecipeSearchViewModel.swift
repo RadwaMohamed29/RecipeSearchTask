@@ -17,7 +17,6 @@ protocol RecipesViewModelType{
 class RecipeSearchViewModel: RecipesViewModelType{
    
     
-    
     func openWebsite(url: String) {
         let application = UIApplication.shared
         if application.canOpenURL(URL(string: url)!){
