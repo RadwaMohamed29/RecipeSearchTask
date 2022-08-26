@@ -9,11 +9,14 @@ import Foundation
 import UIKit
 protocol RecipesViewModelType{
     func callFuncToGetAllRecipes(searchText:String, completion: @escaping(Bool)-> Void)
+    func callFuncToGetFilteredRecipes(searchText:String,healthText: String, completion: @escaping(Bool)-> Void)
     var getRecipes: ((RecipesViewModelType)-> Void)? {get set}
     var recipesData: Recipe? {get set}
     func openWebsite(url: String)
 }
 class RecipeSearchViewModel: RecipesViewModelType{
+   
+    
     
     func openWebsite(url: String) {
         let application = UIApplication.shared
@@ -36,6 +39,23 @@ class RecipeSearchViewModel: RecipesViewModelType{
     func callFuncToGetAllRecipes(searchText:String, completion: @escaping (Bool) -> Void) {
         completion(false)
         network.getAllRecipes(recipeText: searchText) { [weak self]
+            result in
+            switch result{
+            case .success(let recipes):
+                self?.recipesData = recipes
+                
+            case .failure(_):
+                print("can not fetch data")
+            }
+            
+        }
+        completion(true)
+    }
+    
+    
+    func callFuncToGetFilteredRecipes(searchText: String, healthText: String, completion: @escaping (Bool) -> Void) {
+        completion(false)
+        network.getFilteredRecipes(recipeText: searchText, healthText: healthText) { [weak self]
             result in
             switch result{
             case .success(let recipes):

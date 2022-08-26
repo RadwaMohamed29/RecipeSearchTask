@@ -18,20 +18,21 @@
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="RwC-r0-9Vh">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Nds-Go-q4r"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dyD-EF-TD8">
-                                <rect key="frame" x="0.0" y="207" width="414" height="585"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="217" width="414" height="585"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGJ-Mf-KnJ">
-                                <rect key="frame" x="0.0" y="139" width="414" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="60"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="jYZ-ur-2FF"/>
+                                    <constraint firstAttribute="height" constant="60" id="jYZ-ur-2FF"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="La5-of-GbE"/>
@@ -41,31 +42,51 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SUx-pk-Dy3"/>
-                                    <barButtonItem title="Low Suger" id="iBq-TY-K4v"/>
+                                    <barButtonItem title="Low Suger" id="iBq-TY-K4v">
+                                        <connections>
+                                            <action selector="lowSugerBtn:" destination="0Yy-ut-Muw" id="4WW-BR-d0r"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vKF-2K-EJO"/>
-                                    <barButtonItem title="Keto" id="gft-D7-YXU"/>
+                                    <barButtonItem title="Keto" id="gft-D7-YXU">
+                                        <connections>
+                                            <action selector="ketoBtn:" destination="0Yy-ut-Muw" id="iJx-Kg-zwH"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="kt6-u3-9p1"/>
-                                    <barButtonItem title="Vegan" id="8eQ-1C-KKj"/>
+                                    <barButtonItem title="Vegan" id="8eQ-1C-KKj">
+                                        <connections>
+                                            <action selector="veganBtn:" destination="0Yy-ut-Muw" id="eDR-zI-Eso"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="j3L-R0-dhe"/>
                                 </items>
                                 <color key="tintColor" systemColor="tintColor"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Cs0-Um-ZSb">
+                                <rect key="frame" x="20" y="334" width="374" height="379"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rt8-rM-fRn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dyD-EF-TD8" firstAttribute="top" secondItem="lGJ-Mf-KnJ" secondAttribute="bottom" constant="18" id="284-SB-Z50"/>
                             <constraint firstItem="RwC-r0-9Vh" firstAttribute="width" secondItem="eJp-vC-U81" secondAttribute="width" id="AUI-Md-ScF"/>
+                            <constraint firstItem="Cs0-Um-ZSb" firstAttribute="width" secondItem="dyD-EF-TD8" secondAttribute="width" multiplier="0.903382" id="CA3-nx-f7J"/>
                             <constraint firstItem="lGJ-Mf-KnJ" firstAttribute="top" secondItem="RwC-r0-9Vh" secondAttribute="bottom" id="FER-jh-gS9"/>
                             <constraint firstItem="RwC-r0-9Vh" firstAttribute="top" secondItem="Rt8-rM-fRn" secondAttribute="top" id="Gyn-Bb-vyb"/>
                             <constraint firstItem="lGJ-Mf-KnJ" firstAttribute="leading" secondItem="Rt8-rM-fRn" secondAttribute="leading" id="TgJ-UI-DnL"/>
                             <constraint firstItem="dyD-EF-TD8" firstAttribute="leading" secondItem="Rt8-rM-fRn" secondAttribute="leading" id="V2r-Si-Vyo"/>
+                            <constraint firstItem="Cs0-Um-ZSb" firstAttribute="centerX" secondItem="dyD-EF-TD8" secondAttribute="centerX" id="VGR-zQ-kcg"/>
                             <constraint firstItem="lGJ-Mf-KnJ" firstAttribute="width" secondItem="eJp-vC-U81" secondAttribute="width" id="Vce-hA-QAC"/>
                             <constraint firstAttribute="bottom" secondItem="dyD-EF-TD8" secondAttribute="bottom" id="b4h-VG-aKo"/>
                             <constraint firstItem="dyD-EF-TD8" firstAttribute="height" secondItem="eJp-vC-U81" secondAttribute="height" multiplier="0.767857" id="bed-ti-g0K"/>
                             <constraint firstItem="RwC-r0-9Vh" firstAttribute="leading" secondItem="Rt8-rM-fRn" secondAttribute="leading" id="fgK-yD-z2K"/>
+                            <constraint firstItem="Cs0-Um-ZSb" firstAttribute="height" secondItem="dyD-EF-TD8" secondAttribute="height" multiplier="0.550872" id="jZI-vJ-WSW"/>
                             <constraint firstItem="dyD-EF-TD8" firstAttribute="trailing" secondItem="Rt8-rM-fRn" secondAttribute="trailing" id="k4m-tj-fz6"/>
+                            <constraint firstItem="Cs0-Um-ZSb" firstAttribute="centerY" secondItem="dyD-EF-TD8" secondAttribute="centerY" id="k6D-4C-rQa"/>
                             <constraint firstItem="RwC-r0-9Vh" firstAttribute="trailing" secondItem="Rt8-rM-fRn" secondAttribute="trailing" id="nU4-XK-LTm"/>
                             <constraint firstItem="lGJ-Mf-KnJ" firstAttribute="trailing" secondItem="Rt8-rM-fRn" secondAttribute="trailing" id="oSv-18-1lx"/>
                             <constraint firstItem="RwC-r0-9Vh" firstAttribute="height" secondItem="eJp-vC-U81" secondAttribute="height" multiplier="0.0669643" id="s4v-Cr-9YD"/>
@@ -74,6 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BqI-Ut-jVN"/>
                     <connections>
+                        <outlet property="emptyImageView" destination="Cs0-Um-ZSb" id="DAj-mX-jR3"/>
                         <outlet property="recipeTableView" destination="dyD-EF-TD8" id="PSC-xq-wY4"/>
                         <outlet property="searchBar" destination="RwC-r0-9Vh" id="bs7-Hy-Daj"/>
                     </connections>
@@ -92,7 +114,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r8h-1Y-SmI">
                                 <rect key="frame" x="0.0" y="44" width="414" height="179"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwx-Oh-6q6">
                                 <rect key="frame" x="20" y="255" width="374" height="70"/>
@@ -105,7 +127,7 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ml1-q7-jmU">
                                 <rect key="frame" x="30" y="349" width="364" height="358.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-4n-qaY">
                                 <rect key="frame" x="32" y="728.5" width="350" height="111.5"/>
@@ -121,7 +143,7 @@
                                         </fragment>
                                     </attributedString>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.46666666666666667" green="0.85098039215686272" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="recipeWebsiteBtn:" destination="pNj-nu-or0" eventType="touchUpInside" id="dW2-aZ-Zj1"/>
@@ -129,7 +151,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aQN-qi-E7l"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="r8h-1Y-SmI" firstAttribute="leading" secondItem="aQN-qi-E7l" secondAttribute="leading" id="9mK-WG-gwe"/>
                             <constraint firstItem="ml1-q7-jmU" firstAttribute="leading" secondItem="aQN-qi-E7l" secondAttribute="leading" constant="30" id="Ak4-RI-ZAq"/>
@@ -157,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJx-nc-6qa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3179.7101449275365" y="81.696428571428569"/>
+            <point key="canvasLocation" x="2443" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="opX-Mv-ssE">
@@ -178,9 +200,10 @@
             <point key="canvasLocation" x="673.91304347826087" y="81.696428571428569"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemGreenColor"/>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

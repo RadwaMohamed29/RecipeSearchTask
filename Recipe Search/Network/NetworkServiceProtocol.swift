@@ -9,4 +9,5 @@ import Foundation
 protocol NetworkServiceProtocol{
     
     func getAllRecipes(recipeText: String,completion: @escaping(Result<Recipe,Error>) -> Void)
+    func getFilteredRecipes(recipeText: String,healthText: String,completion: @escaping(Result<Recipe,Error>) -> Void)
 }

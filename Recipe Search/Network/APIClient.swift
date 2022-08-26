@@ -9,13 +9,18 @@ import Foundation
 import Alamofire
 
 class ApiClient: NetworkServiceProtocol{
- 
+
     
     private let BASE_URL = "https://api.edamam.com/search?"
 
     func getAllRecipes(recipeText: String, completion: @escaping (Result<Recipe, Error>) -> Void) {
         fetchData(endpoint: .recipeSearch(searchText: recipeText), completion: completion)
     }
+    func getFilteredRecipes(recipeText: String, healthText: String, completion: @escaping (Result<Recipe, Error>) -> Void) {
+        fetchData(endpoint: .recipesFilter(searchText: recipeText, healthText: healthText), completion: completion)
+    }
+    
+ 
     
     func fetchData<T :Codable>(endpoint: EndPoints, completion: @escaping (Result<T, Error>)-> Void){
         let url = "\(BASE_URL)\(endpoint.path)"
@@ -23,6 +28,8 @@ class ApiClient: NetworkServiceProtocol{
             switch res.result{
             case .failure(let error):
                 completion(.failure(error))
+                print("errorfromapi \(error.localizedDescription)")
+
             case .success(_):
                 guard let data = res.data else{return}
                 do{

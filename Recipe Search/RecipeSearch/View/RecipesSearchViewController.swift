@@ -11,29 +11,11 @@ import KRProgressHUD
 
 class RecipesSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
    
+    @IBOutlet weak var emptyImageView: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var recipeTableView: UITableView!
     var recipesViewModel: RecipesViewModelType?
-    //{
-//        didSet{
-//            recipesViewModel?.callFuncToGetAllRecipes(searchText: searchBar.text ?? "", completion: {
-//                (isFinshed) in
-//                if !isFinshed {
-//                    KRProgressHUD.show()
-//                }else{
-//                    KRProgressHUD.dismiss()
-//                }
-//            })
-//
-//            recipesViewModel?.getRecipes = {[weak self ] _ in
-//                DispatchQueue.main.async {
-//                    self?.recipeTableView.reloadData()
-//                }
-//
-//            }
-//        }
-    
- //   }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         recipeTableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil), forCellReuseIdentifier: "RecipeTableViewCell")
@@ -41,6 +23,8 @@ class RecipesSearchViewController: UIViewController, UITableViewDataSource, UITa
         recipeTableView.delegate = self
         recipesViewModel = RecipeSearchViewModel()
         self.title = "Recipes Search"
+        emptyImageView.image = UIImage(named: "searchImage")
+        recipeTableView.isHidden = true
         //getRecipesData()
         
 
@@ -91,6 +75,7 @@ class RecipesSearchViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     @IBAction func AllRecipesBtn(_ sender: Any) {
+        emptyImageView.isHidden = true
         recipesViewModel?.callFuncToGetAllRecipes(searchText: searchBar.text ?? "" , completion: {
             (isFinshed) in
             if !isFinshed {
@@ -99,24 +84,50 @@ class RecipesSearchViewController: UIViewController, UITableViewDataSource, UITa
                 KRProgressHUD.dismiss()
             }
         })
-        recipesViewModel?.getRecipes = {[weak self ] _ in
-                self?.recipeTableView.reloadData()
-            
+        if recipesViewModel?.recipesData?.hits?.count == 0{
+            emptyImageView.isHidden = false
+            recipeTableView.isHidden = true
+            emptyImageView.image = UIImage(named: "noResultImage")
+        }else{
+            emptyImageView.isHidden = true
+            recipeTableView.isHidden = false
+            recipesViewModel?.getRecipes = {[weak self ] _ in
+            self?.recipeTableView.reloadData()
+            }
         }
+
     }
     
-    func getRecipesData(){
-        recipesViewModel?.callFuncToGetAllRecipes(searchText: searchBar.text ?? "" , completion: {
+    @IBAction func lowSugerBtn(_ sender: Any) {
+       getFilteredData(health: "low-suger")
+    }
+    @IBAction func ketoBtn(_ sender: Any) {
+        getFilteredData(health: "keto")
+    }
+    @IBAction func veganBtn(_ sender: Any) {
+       getFilteredData(health: "vegan")
+    }
+    func getFilteredData(health: String){
+        emptyImageView.isHidden = true
+        recipesViewModel?.callFuncToGetFilteredRecipes(searchText: searchBar.text ?? "", healthText: health, completion: {
             (isFinshed) in
             if !isFinshed {
                 KRProgressHUD.show()
             }else{
                 KRProgressHUD.dismiss()
             }
-        })
-        recipesViewModel?.getRecipes = {[weak self ] _ in
-                self?.recipeTableView.reloadData()
             
+        })
+        if recipesViewModel?.recipesData?.hits?.count == 0{
+            emptyImageView.isHidden = false
+            recipeTableView.isHidden = true
+            emptyImageView.image = UIImage(named: "noResultImage")
+        }else{
+            emptyImageView.isHidden = true
+            recipeTableView.isHidden = false
+            recipesViewModel?.getRecipes = {[weak self ] _ in
+            self?.recipeTableView.reloadData()
+            }
         }
     }
 }
