@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecipeDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecipeDetailsViewController: UIViewController {
 
     @IBOutlet weak var ingredientLinesTableView: UITableView!
     @IBOutlet weak var recipeTitle: UILabel!
@@ -23,6 +23,38 @@ class RecipeDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         setUpScreen()
 
     }
+    
+    func setUpScreen(){
+        recipeTitle.text = recipeDetails?.label
+        let url = URL(string: recipeDetails?.image ?? "")
+        recipeImageView.kf.setImage(with: url)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareDataTapped))
+    }
+    
+    func shareData(data: [Any], barButtonItem: UIBarButtonItem?){
+        let activityViewController = UIActivityViewController(activityItems: data, applicationActivities: [])
+        activityViewController.popoverPresentationController?.barButtonItem = barButtonItem
+        present(activityViewController, animated: true, completion: nil)
+    }
+
+    @objc func shareDataTapped(){
+        guard let recipeURL = recipeDetails?.url else{ return }
+        shareData(data: [recipeURL], barButtonItem: navigationItem.rightBarButtonItem)
+    }
+    @IBAction func recipeWebsiteBtn(_ sender: Any) {
+        recipeViewModel.openWebsite(url: recipeDetails?.url ?? "")
+    }
+}
+
+extension RecipeDetailsViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.backgroundConfiguration?.backgroundColor = UIColor.white
+        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize:24)
+        header.textLabel?.frame = header.bounds
+        
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipeDetails?.ingredientLines?.count ?? 0
     }
@@ -36,14 +68,5 @@ class RecipeDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         }
         cell.ingredientLinesLbl.text = recipeDetails?.ingredientLines?[indexPath.row]
         return cell
-    }
-    func setUpScreen(){
-        recipeTitle.text = recipeDetails?.label
-        let url = URL(string: recipeDetails?.image ?? "")
-        recipeImageView.kf.setImage(with: url)
-    }
-
-    @IBAction func recipeWebsiteBtn(_ sender: Any) {
-        recipeViewModel.openWebsite(url: recipeDetails?.url ?? "")
     }
 }

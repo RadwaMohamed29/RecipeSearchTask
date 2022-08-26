@@ -99,12 +99,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="I88-u9-SST"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ml1-q7-jmU">
-                                <rect key="frame" x="20" y="349" width="374" height="358.5"/>
+                                <rect key="frame" x="30" y="349" width="364" height="358.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-4n-qaY">
@@ -120,6 +120,8 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.46666666666666667" green="0.85098039215686272" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="recipeWebsiteBtn:" destination="pNj-nu-or0" eventType="touchUpInside" id="dW2-aZ-Zj1"/>
@@ -130,7 +132,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="r8h-1Y-SmI" firstAttribute="leading" secondItem="aQN-qi-E7l" secondAttribute="leading" id="9mK-WG-gwe"/>
-                            <constraint firstItem="ml1-q7-jmU" firstAttribute="leading" secondItem="aQN-qi-E7l" secondAttribute="leading" constant="20" id="Ak4-RI-ZAq"/>
+                            <constraint firstItem="ml1-q7-jmU" firstAttribute="leading" secondItem="aQN-qi-E7l" secondAttribute="leading" constant="30" id="Ak4-RI-ZAq"/>
                             <constraint firstItem="aQN-qi-E7l" firstAttribute="trailing" secondItem="ml1-q7-jmU" secondAttribute="trailing" constant="20" id="I3c-Gr-DoS"/>
                             <constraint firstItem="r8h-1Y-SmI" firstAttribute="height" secondItem="7MX-vO-gyf" secondAttribute="height" multiplier="0.2" id="PGD-OQ-dF9"/>
                             <constraint firstItem="ml1-q7-jmU" firstAttribute="top" secondItem="kwx-Oh-6q6" secondAttribute="bottom" constant="24" id="Rh0-5N-m2K"/>
@@ -138,7 +140,6 @@
                             <constraint firstItem="kwx-Oh-6q6" firstAttribute="top" secondItem="r8h-1Y-SmI" secondAttribute="bottom" constant="32" id="WoA-zu-u0h"/>
                             <constraint firstItem="ml1-q7-jmU" firstAttribute="height" secondItem="7MX-vO-gyf" secondAttribute="height" multiplier="0.4" id="Xj1-td-9gP"/>
                             <constraint firstItem="aQN-qi-E7l" firstAttribute="trailing" secondItem="4ca-4n-qaY" secondAttribute="trailing" constant="32" id="b9d-V1-ARR"/>
-                            <constraint firstItem="ml1-q7-jmU" firstAttribute="width" secondItem="7MX-vO-gyf" secondAttribute="width" multiplier="0.903382" id="fei-MF-kLH"/>
                             <constraint firstItem="4ca-4n-qaY" firstAttribute="top" secondItem="ml1-q7-jmU" secondAttribute="bottom" constant="21" id="hT7-zt-K13"/>
                             <constraint firstItem="aQN-qi-E7l" firstAttribute="trailing" secondItem="kwx-Oh-6q6" secondAttribute="trailing" constant="20" id="kJS-KQ-FeK"/>
                             <constraint firstItem="aQN-qi-E7l" firstAttribute="trailing" secondItem="r8h-1Y-SmI" secondAttribute="trailing" id="kV9-yx-XrG"/>
