@@ -15,8 +15,7 @@ protocol RecipesViewModelType{
     func openWebsite(url: String)
 }
 class RecipeSearchViewModel: RecipesViewModelType{
-   
-    
+
     func openWebsite(url: String) {
         let application = UIApplication.shared
         if application.canOpenURL(URL(string: url)!){
@@ -36,36 +35,40 @@ class RecipeSearchViewModel: RecipesViewModelType{
         }
     }
     func callFuncToGetAllRecipes(searchText:String, completion: @escaping (Bool) -> Void) {
-        completion(false)
+        //completion(false)
         network.getAllRecipes(recipeText: searchText) { [weak self]
             result in
             switch result{
             case .success(let recipes):
                 self?.recipesData = recipes
+                completion(true)
                 
             case .failure(_):
+                completion(false)
                 print("can not fetch data")
             }
             
         }
-        completion(true)
+        //completion(true)
     }
     
     
     func callFuncToGetFilteredRecipes(searchText: String, healthText: String, completion: @escaping (Bool) -> Void) {
-        completion(false)
+        
         network.getFilteredRecipes(recipeText: searchText, healthText: healthText) { [weak self]
             result in
             switch result{
             case .success(let recipes):
                 self?.recipesData = recipes
+                completion(true)
                 
             case .failure(_):
                 print("can not fetch data")
+                completion(false)
             }
             
         }
-        completion(true)
+       
     }
     
 

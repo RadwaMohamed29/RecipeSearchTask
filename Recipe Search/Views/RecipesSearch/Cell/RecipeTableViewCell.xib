@@ -28,13 +28,13 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fer-bN-7I7">
                                 <rect key="frame" x="143" y="60.5" width="199" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Health Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKa-io-m48">
-                                <rect key="frame" x="143" y="81.5" width="199" height="55"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="143" y="81.5" width="199" height="68"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -70,7 +70,7 @@
             <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="bKa-io-m48" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.542234" id="0Yv-Y8-LDb"/>
-                <constraint firstItem="bKa-io-m48" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.323529" id="S17-GN-fD2"/>
+                <constraint firstItem="bKa-io-m48" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.4" id="S17-GN-fD2"/>
                 <constraint firstItem="jlz-lU-dDS" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.25" id="eLj-4x-jTz"/>
                 <constraint firstItem="Fer-bN-7I7" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.123529" id="h52-fq-PUF"/>
                 <constraint firstItem="Fer-bN-7I7" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.542234" id="i3H-nP-ClI"/>
