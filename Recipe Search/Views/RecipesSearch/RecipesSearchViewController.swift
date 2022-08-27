@@ -40,8 +40,8 @@ class RecipesSearchViewController: UIViewController, UISearchBarDelegate {
             
                         if isFinshed {
                             DispatchQueue.main.async {
-                                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                                 if self.recipesViewModel?.recipesData?.hits?.count == 0{
+                                    self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                                     self.emptyImageView.isHidden = false
                                     self.recipeTableView.isHidden = true
                                     self.emptyImageView.image = UIImage(named: "noResultImage")
@@ -57,6 +57,7 @@ class RecipesSearchViewController: UIViewController, UISearchBarDelegate {
                             }
                          
                         }else{
+                            self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                             self.emptyImageView.isHidden = false
                             self.recipeTableView.isHidden = true
                             self.emptyImageView.image = UIImage(named: "noResultImage")
