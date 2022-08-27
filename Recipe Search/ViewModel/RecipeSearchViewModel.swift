@@ -35,7 +35,6 @@ class RecipeSearchViewModel: RecipesViewModelType{
         }
     }
     func callFuncToGetAllRecipes(searchText:String, completion: @escaping (Bool) -> Void) {
-        //completion(false)
         network.getAllRecipes(recipeText: searchText) { [weak self]
             result in
             switch result{
@@ -49,7 +48,7 @@ class RecipeSearchViewModel: RecipesViewModelType{
             }
             
         }
-        //completion(true)
+        completion(true)
     }
     
     
@@ -68,7 +67,7 @@ class RecipeSearchViewModel: RecipesViewModelType{
             }
             
         }
-       
+        completion(true)
     }
     
 

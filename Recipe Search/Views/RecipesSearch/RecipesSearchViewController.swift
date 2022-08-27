@@ -33,44 +33,20 @@ class RecipesSearchViewController: UIViewController, UISearchBarDelegate {
     }
     func getRecipesSearchData(){
         emptyImageView.isHidden = true
-        recipesViewModel?.getRecipes = nil
-        recipesViewModel?.errorMessage = ""
-        recipesViewModel?.callFuncToGetAllRecipes(searchText: searchBar.text ?? "" , completion: {
-            (isFinshed) in
-            if !isFinshed {
-                KRProgressHUD.show()
-            }else{
-                KRProgressHUD.dismiss()
-            }
-        })
-        if recipesViewModel?.recipesData?.hits?.count == 0 || recipesViewModel?.errorMessage != "" {
-            emptyImageView.isHidden = false
-            recipeTableView.isHidden = true
-            emptyImageView.image = UIImage(named: "noResultImage")
-        }else{
-            emptyImageView.isHidden = true
-            recipeTableView.isHidden = false
-            recipesViewModel?.getRecipes = { [weak self] _ in
-                self?.recipeTableView.reloadData()
-            }
-           
-            
-        }
-    }
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        emptyImageView.isHidden = true
         recipeTableView.isHidden = true
         self.showActivityIndicator(indicator: self.indicator, startIndicator: true)
         recipesViewModel?.callFuncToGetAllRecipes(searchText: searchBar.text ?? "" , completion: {
                         (isFinshed) in
-            self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+            
                         if isFinshed {
                             DispatchQueue.main.async {
+                                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                                 if self.recipesViewModel?.recipesData?.hits?.count == 0{
                                     self.emptyImageView.isHidden = false
                                     self.recipeTableView.isHidden = true
                                     self.emptyImageView.image = UIImage(named: "noResultImage")
                                 }else{
+                                    self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                                     self.emptyImageView.isHidden = true
                                     self.recipeTableView.isHidden = false
                                     self.recipesViewModel?.getRecipes = { [weak self] _ in
@@ -87,39 +63,44 @@ class RecipesSearchViewController: UIViewController, UISearchBarDelegate {
                         }
                     })
     
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+       getRecipesSearchData()
         }
     
    
     func getFilteredData(health: String){
-        KRProgressHUD.show()
         emptyImageView.isHidden = true
-        recipesViewModel?.getRecipes = nil
-        recipesViewModel?.errorMessage = ""
-        recipesViewModel?.callFuncToGetFilteredRecipes(searchText: searchBar.text ?? "", healthText: health, completion: {
-            (isFinshed) in
-            if !isFinshed {
-                KRProgressHUD.show()
-            }else{
-                KRProgressHUD.dismiss()
-            }
+        recipeTableView.isHidden = true
+        self.showActivityIndicator(indicator: self.indicator, startIndicator: true)
+        recipesViewModel?.callFuncToGetFilteredRecipes(searchText: searchBar.text ?? "", healthText: health, completion:  {
+                        (isFinshed) in
             
-        })
-        if recipesViewModel?.recipesData?.hits?.count == 0 {
-            KRProgressHUD.dismiss()
-            emptyImageView.isHidden = false
-            recipeTableView.isHidden = true
-            emptyImageView.image = UIImage(named: "noResultImage")
-        }else{
-            KRProgressHUD.dismiss()
-            emptyImageView.isHidden = true
-            recipeTableView.isHidden = false
-            recipesViewModel?.getRecipes = { [weak self] _ in
-                self?.recipeTableView.reloadData()
-            }
-           
-            
-        }
-        
+                        if isFinshed {
+                            DispatchQueue.main.async {
+                                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                                if self.recipesViewModel?.recipesData?.hits?.count == 0{
+                                    self.emptyImageView.isHidden = false
+                                    self.recipeTableView.isHidden = true
+                                    self.emptyImageView.image = UIImage(named: "noResultImage")
+                                }else{
+                                    self.emptyImageView.isHidden = true
+                                    self.recipeTableView.isHidden = false
+                                    self.recipesViewModel?.getRecipes = { [weak self] _ in
+                                        self?.recipeTableView.reloadData()
+                                    }
+                                }
+                                
+                            }
+                         
+                        }else{
+                            self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                            self.emptyImageView.isHidden = false
+                            self.recipeTableView.isHidden = true
+                            self.emptyImageView.image = UIImage(named: "noResultImage")
+                        }
+                    })
+    
     }
     @IBAction func AllRecipesBtn(_ sender: Any) {
         getRecipesSearchData()
@@ -137,6 +118,8 @@ class RecipesSearchViewController: UIViewController, UISearchBarDelegate {
     }
     
 }
+
+
 extension RecipesSearchViewController:  UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipesViewModel?.recipesData?.hits?.count ?? 0
@@ -158,7 +141,7 @@ extension RecipesSearchViewController:  UITableViewDataSource, UITableViewDelega
         let arr = item?.healthLabels?[0].map { (double) -> String in
             return String(double)
         }.joined()
-        cell.recipeHealthLbl.text! += "|\(String(describing: arr))"
+        cell.recipeHealthLbl.text += "\(String(describing: arr!)) | "
         cell.view.layer.borderColor = UIColor.black.cgColor
         cell.view.layer.borderWidth = 1
         

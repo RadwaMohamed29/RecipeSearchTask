@@ -32,30 +32,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Health Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKa-io-m48">
-                                <rect key="frame" x="143" y="81.5" width="199" height="68"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlz-lU-dDS">
                                 <rect key="frame" x="143" y="10" width="199" height="42.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRa-N6-TkV">
+                                <rect key="frame" x="143" y="85.5" width="199" height="61"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KYd-Mq-dAj" firstAttribute="leading" secondItem="JZq-GD-eae" secondAttribute="leading" constant="8" id="0ng-cX-j15"/>
                             <constraint firstItem="Fer-bN-7I7" firstAttribute="top" secondItem="jlz-lU-dDS" secondAttribute="bottom" constant="8" id="AHF-Xw-ost"/>
+                            <constraint firstItem="MRa-N6-TkV" firstAttribute="top" secondItem="Fer-bN-7I7" secondAttribute="bottom" constant="4" id="Ayg-Uo-BXh"/>
                             <constraint firstItem="KYd-Mq-dAj" firstAttribute="top" secondItem="JZq-GD-eae" secondAttribute="top" constant="18" id="KS2-t8-cnO"/>
-                            <constraint firstItem="bKa-io-m48" firstAttribute="leading" secondItem="Fer-bN-7I7" secondAttribute="leading" id="LY2-OV-E5q"/>
                             <constraint firstItem="jlz-lU-dDS" firstAttribute="leading" secondItem="KYd-Mq-dAj" secondAttribute="trailing" constant="20" id="OLK-M0-PkU"/>
                             <constraint firstItem="Fer-bN-7I7" firstAttribute="leading" secondItem="jlz-lU-dDS" secondAttribute="leading" id="SjE-XC-3Cv"/>
                             <constraint firstItem="jlz-lU-dDS" firstAttribute="top" secondItem="JZq-GD-eae" secondAttribute="top" constant="10" id="Uzu-A1-xEE"/>
-                            <constraint firstItem="bKa-io-m48" firstAttribute="top" secondItem="Fer-bN-7I7" secondAttribute="bottom" id="Xfy-YT-Wmu"/>
                             <constraint firstAttribute="bottom" secondItem="KYd-Mq-dAj" secondAttribute="bottom" constant="16" id="akP-PL-mXQ"/>
+                            <constraint firstItem="MRa-N6-TkV" firstAttribute="leading" secondItem="Fer-bN-7I7" secondAttribute="leading" id="u2k-it-pGX"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -69,15 +70,15 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="bKa-io-m48" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.542234" id="0Yv-Y8-LDb"/>
-                <constraint firstItem="bKa-io-m48" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.4" id="S17-GN-fD2"/>
+                <constraint firstItem="MRa-N6-TkV" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.358824" id="5Mk-Px-zUx"/>
+                <constraint firstItem="MRa-N6-TkV" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.542234" id="XbL-6P-PsU"/>
                 <constraint firstItem="jlz-lU-dDS" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.25" id="eLj-4x-jTz"/>
                 <constraint firstItem="Fer-bN-7I7" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.123529" id="h52-fq-PUF"/>
                 <constraint firstItem="Fer-bN-7I7" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.542234" id="i3H-nP-ClI"/>
                 <constraint firstItem="jlz-lU-dDS" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.542234" id="iPb-Bd-XDj"/>
             </constraints>
             <connections>
-                <outlet property="recipeHealthLbl" destination="bKa-io-m48" id="8Bx-8L-70b"/>
+                <outlet property="recipeHealthLbl" destination="MRa-N6-TkV" id="tqR-jF-til"/>
                 <outlet property="recipeImage" destination="KYd-Mq-dAj" id="KWv-pA-N0Z"/>
                 <outlet property="recipeSourceLbl" destination="Fer-bN-7I7" id="yAU-Rh-dBE"/>
                 <outlet property="recipeTitleLbl" destination="jlz-lU-dDS" id="9hl-BU-3PI"/>
@@ -87,6 +88,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

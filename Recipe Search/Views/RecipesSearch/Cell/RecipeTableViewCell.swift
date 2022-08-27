@@ -13,17 +13,12 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeSourceLbl: UILabel!
     @IBOutlet weak var recipeTitleLbl: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
-    @IBOutlet weak var recipeHealthLbl: UILabel!
+    @IBOutlet weak var recipeHealthLbl: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
 
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
-    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
